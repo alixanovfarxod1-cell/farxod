@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section id="contentSection">
+    <div class="row">
+
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="left_content">
+
+                <div class="contact_area">
+
+                    <h2>Biz bilan bog‘lanish</h2>
+
+                    {% if success %}
+                        <p>{{ success }}</p>
+                    {% endif %}
+
+                    <form method="POST" class="contact_form">
+                        {% csrf_token %}
+
+                        <input
+                            class="form-control"
+                            type="text"
+                            name="name"
+                            placeholder="Ismingiz"
+                            required
+                        >
+
+                        <input
+                            class="form-control"
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            required
+                        >
+
+                        <textarea
+                            class="form-control"
+                            name="message"
+                            cols="30"
+                            rows="10"
+                            placeholder="Xabaringiz"
+                            required
+                        ></textarea>
+
+                        <input
+                            type="submit"
+                            value="Yuborish"
+                        >
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <aside class="right_content">
+
+<div class="single_sidebar">
+    <h2><span>Biz bilan bog‘laning</span></h2>
+
+    <p>
+        Savollaringiz yoki takliflaringiz bo‘lsa,
+        bizga xabar yuboring.
+    </p>
+
+    <a href="https://t.me/+ywz7MewNTIpmZDA6" target="_blank">
+        Telegram guruhimiz
+    </a>
+</div>
+            </aside>
+        </div>
+
+    </div>
+</section>
+
+{% endblock content %}

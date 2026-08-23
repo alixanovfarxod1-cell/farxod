@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h2 style="text-align: center; color: red ">Biz haqimizda</h2>
+<center><img src="{% static 'images/about.jpg' %}" width="800px"></center>
+<br>
+<h3 style="text-align: center">
+    Biz ushbu saytni guruhimiz bilan <br>
+    birgalikda ishlab chiqyapmiz. <br>
+    Bizning maqsadimiz.....
+</h3>
+<br>
+
+<div style="text-align: left; margin-left: 50px;">
+    <a href="{% url 'home_page' %}"
+       style="text-align: center; display: inline-block; border: 1px dashed black; padding: 10px 20px; text-decoration: none; color: black; font-size: 24px;">
+        Asosiy
+    </a>
+</div>
+
+{% endblock %}
